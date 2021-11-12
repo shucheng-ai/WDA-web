@@ -1,0 +1,100 @@
+.header-box {
+  margin: 10px auto;
+  display: flex;
+  height: 30px;
+  background: #87e8de;
+}
+
+.box {
+  position: relative;
+  min-height: 600px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+
+  .box-content {
+    display: inline-block;
+    box-sizing: border-box;
+    flex: auto;
+  }
+
+  .box-input {
+    flex-shrink: 0;
+    display: inline-block;
+    box-sizing: border-box;
+    padding-left: 10px;
+    width: 450px;
+    //float: right;
+
+    .box-input-item {
+      margin: 10px 0;
+    }
+  }
+}
+
+.thumbnail-box {
+  position: absolute;
+  top: -15px;
+  left: 0;
+  width: 100%;
+  height: 170px;
+  padding: 10px 10px;
+  z-index: 99;
+  background: white;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border: solid 1px #e8e8e8;
+}
+
+.thumbnail-content {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+}
+
+.thumbnail-card {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  height: 155px;
+  flex-shrink: 0;
+}
+
+.thumbnail-card:hover {
+  border: solid 3px #1890ff;
+}
+
+.color-box {
+  position: relative;
+  background: black;
+  height: 50px;
+  padding: 15px;
+  color: white;
+  vertical-align: middle;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  .color-content {
+    height: 100%;
+  }
+}
+
+.color-item-box {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+}
+
+.label-box {
+  label {
+    display: inline-block;
+    color: rgba(0, 0, 0, 0.65);
+    padding-right: 20px;
+  }
+
+  figcaption {
+    display: block;
+    color: black;
+  }
+}

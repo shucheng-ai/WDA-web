@@ -1,0 +1,32 @@
+.active-bbox-rect {
+  /* fill: rgba(0, 0, 0, 0.1); */
+  /* 透明穿透 */
+  fill: none;
+  stroke: green;
+  stroke-width: 2px;
+}
+
+.storage-bbox-region {
+  fill: rgba(0, 0, 0, 0);
+  /* stroke-width: 1.5px;
+  stroke: #ff884b; */
+  stroke-width: 0;
+  stroke: transparent;
+}
+
+.storage-bbox-region-active {
+  fill: rgba(0, 0, 0, 0.1);
+  stroke: #ff884b;
+  stroke-width: 2px;
+}
+
+.cad-polygon-path {
+  fill: #1890ff;
+  fill-opacity: 0.7;
+  stroke-dasharray: 10 10;
+}
+.cad-polygon-block {
+  fill: #6983aa;
+  fill-opacity: 0.7;
+  stroke-dasharray: 5 10 5;
+}

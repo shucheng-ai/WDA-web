@@ -1,0 +1,337 @@
+.project-content {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 5px;
+  padding-bottom: 40px;
+}
+
+.project-content-graph {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+}
+
+.project-content-table {
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: top;
+}
+
+.project-graph-buttons {
+  display: block;
+  position: absolute;
+  top: 30px;
+  left: 20px;
+}
+
+.project-graph-buttons-item {
+  // display: block;
+  // margin: 10px auto;
+  display: flex;
+  align-items: center;
+  margin: 10px auto;
+  .ant-select {
+    width: 130px;
+  }
+  .icon {
+    margin-left: 5px;
+  }
+}
+
+#svg {
+  background-color: #333;
+}
+
+/deep/ .storage-input-item {
+  display: inline-block;
+  width: 40%;
+  margin-left: 30px;
+  .ant-radio-group {
+    display: flex !important;
+  }
+  input:out-of-range {
+    border: 2px solid red !important;
+  }
+  .ant-input-number {
+    width: 100%;
+  }
+  .ant-select {
+    width: 100%;
+  }
+}
+
+.storage-input-item:first-child {
+  margin-left: 0;
+}
+/deep/ .input-name {
+  .ant-input {
+    border: none !important;
+    background: none;
+  }
+}
+
+.flex {
+  display: flex !important;
+}
+
+.button-box {
+  display: flex;
+  justify-content: flex-end;
+  margin: 30px 0;
+  button {
+    // width: 80px;
+    margin: 0 10px;
+  }
+}
+.storage-button-box {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px 0;
+  border-top: 1px solid #ddd;
+  button {
+    margin: 0 10px;
+  }
+}
+
+.graph-menu {
+  position: absolute;
+  width: 100%;
+  z-index: 9;
+  padding: 4px 20px;
+  background-color: #111;
+  border-bottom: 1px solid @primary-color;
+}
+.icon {
+  color: @primary-color;
+  font-size: 16px;
+  margin-right: 10px;
+}
+.opt-button-box {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 99999;
+  padding: 24px 0;
+  button {
+    margin-right: 10px;
+  }
+}
+
+/deep/ .error {
+  border-color: #ff7875 !important;
+}
+
+.error-tip {
+  font-size: 10px;
+  line-height: 32px;
+  margin-left: 10px;
+  color: #ff7875;
+  position: absolute;
+}
+
+.preview-img {
+  text-align: center;
+  margin: 10px 0;
+}
+.save-name {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  input {
+    width: 40%;
+  }
+}
+
+.select-active {
+  color: @primary-color;
+  border-color: @primary-color;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+}
+
+/deep/ .bottom-card-box {
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-between;
+  .bottom-div {
+    margin-right: 40px;
+  }
+  .ant-card-body {
+    min-width: 200px;
+    max-width: 200px;
+  }
+}
+/deep/ .storage-view-box {
+  // border: 1px solid #e8e8e8;
+  margin-bottom: 10px;
+  .ant-card-cover {
+    display: flex;
+    justify-content: center;
+  }
+  .ant-card-meta-title {
+    text-align: center;
+  }
+  .ant-card-meta-description {
+    text-align: center;
+  }
+}
+.storage-view-img {
+  height: auto;
+  width: auto;
+  max-height: 156px;
+}
+
+.model-button {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .custom-button {
+    color: @primary-color;
+    background-color: #fff;
+    border-color: #d9d9d9;
+  }
+  .main-button {
+    color: #fff;
+    background-color: @primary-color;
+    border-color: @primary-color;
+  }
+}
+
+.thumbnail-img {
+  max-width: 200px;
+}
+
+/deep/ .hide-node {
+  display: none;
+}
+
+.active {
+  .navigation-name {
+    font-weight: 600;
+    color: @primary-color;
+  }
+}
+
+.main-storage-box {
+  display: flex;
+  border: 1px solid #ddd;
+  padding: 30px;
+}
+
+.item-storage-box {
+  width: 400px;
+}
+
+.repreview-button {
+  color: @primary-color;
+  border-color: @primary-color;
+  width: 170px;
+  margin: 10px 15px 20px;
+}
+
+.default-button {
+  color: @primary-color;
+  border-color: @primary-color;
+}
+
+.storage-img {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  margin-right: 8px;
+  padding: 3px;
+  border: 1px dashed #666;
+}
+
+.canvas-box {
+  background: #333;
+}
+
+/deep/ .canvas-steps {
+  margin-left: 20px;
+  // width: 300px;
+  width: 100%;
+  .ant-steps-item-content {
+    width: auto;
+  }
+  .ant-steps-item-description {
+    padding: 6px 0;
+  }
+}
+
+.canvas-points {
+  span {
+    margin: 0 10px;
+  }
+  .ant-input-number {
+    width: 100px;
+  }
+}
+.cad-radio {
+  color: #ccc;
+  margin-right: 10px;
+}
+
+.empty-box {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  .empty-tip {
+    font-size: 24px;
+    color: #999;
+    word-break: keep-all; /* 不换行 */
+    white-space: nowrap; /* 不换行 */
+  }
+}
+
+.debugg-box {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  z-index: 99;
+}
+
+.shape-box {
+  width: 50px;
+  border-radius: 8px;
+  background: #505050;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4px 0;
+
+  .shape-item {
+    // margin: 4px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    &.active {
+      background: #393939;
+    }
+    &.disabled {
+      filter: brightness(50%);
+    }
+  }
+  .shape-img {
+    padding: 8px;
+    margin: 5px;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.item-bbox-input {
+  font-size: 12px;
+  width: 70px !important;
+  text-align: center !important;
+}

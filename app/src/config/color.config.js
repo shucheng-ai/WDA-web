@@ -1,0 +1,28 @@
+export const color_config = () => {
+  return {
+    wall: '#c8c8c8',
+    column: '#e6e600',
+    office: '#1f77b4',
+    mark: 'red',
+    obstacle: '#e8eae6',
+    guard: '#aaaaaa',
+    isolate: '#7e7474',
+    evitable: '#c6b497',
+    path: '#1890ff',
+    block: '#6983aa',
+    region: '#ff884b',
+    apr: '#FF7F00',
+    aprupright: '#0000FF',
+    shelf: '#FF0000',
+    shelfupright: '#00FFFF',
+    underpass: '#00FF00',
+    active: '#2ca02c',
+    assist: '#fff',
+    stack: '#FFFFFF',
+    polygon: '#fbd46d',
+    model: '#ddd',
+    door: '#535475',
+    exit: '#535475',
+    line: 'red',
+  };
+};

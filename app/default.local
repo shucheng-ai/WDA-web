@@ -1,0 +1,8 @@
+// rename test config js
+let localConfig = {
+    api: 'http://127.0.0.1:8008/',
+    docker_api: 'http://172.17.0.1:8008/',
+    name: 'test'
+}
+
+module.exports = localConfig;
