@@ -176,9 +176,53 @@
 
 			<SCCanvas ref="sc_canvas" class="canvas-box" v-if="show_greenfield"></SCCanvas>
 
-			<div v-if="!has_true_cad_data && !show_greenfield" class="empty-box">
-				<p class="empty-tip">Please upload cad file or use greenfield mode</p>
-			</div>
+      <div v-if="base_status===-1" class="empty-box" style="width: 100%">
+        <div v-if="!has_true_cad_data && !show_greenfield" style="margin-top: -100px">
+          <p class="empty-tip">Please upload cad file or use greenfield mode</p>
+          <p style="color: #993030;font-size: 20px;margin-top: 5px">No CAD File? Try Sample Below:</p>
+
+          <div>
+            <a-card :bordered="false" style="width: 280px;margin-top: 20px;margin-left:-20px;display: inline-block;">
+              <img
+                  slot="cover"
+                  alt="example"
+                  style="height: 150px"
+                  :src="img_cad1"
+              />
+              <a-card-meta title="Empty Warehouse Floor" description="You can add Racks as you like ..."></a-card-meta>
+              <a-button
+                  type="primary"
+                  style="width: 80%;margin-top: 15px;left: 10%"
+                  @click="init_project_by_demo(0)"
+              >
+                Try This!
+              </a-button>
+            </a-card>
+
+            <a-card :bordered="false" style="width: 280px;margin-top: 20px;margin-left:10px;display: inline-block;">
+              <img
+                  slot="cover"
+                  alt="example"
+                  style="height: 150px"
+                  :src="img_cad2"
+              />
+              <a-card-meta title="Warehouse with Racks" description="You can Modify as you like ..."></a-card-meta>
+              <a-button
+                  type="primary"
+                  style="width: 80%;margin-top: 15px;left: 10%"
+                  @click="init_project_by_demo(1)"
+              >
+                Try This!
+              </a-button>
+            </a-card>
+          </div>
+
+        </div>
+      </div>
+
+      <!--			<div v-if="!has_true_cad_data && !show_greenfield" class="empty-box">-->
+<!--				<p class="empty-tip">Please upload cad file or use greenfield mode</p>-->
+<!--			</div>-->
 		</div>
 
 		<!-- 右侧storage table -->
@@ -993,6 +1037,8 @@ import img_move from '../../../assets/images/draw/move.png';
 import img_line from '../../../assets/images/draw/line.png';
 import img_region from '../../../assets/images/draw/region.png';
 import img_polygon from '../../../assets/images/draw/polygon.png';
+import img_cad1 from '../../../assets/images/cad1.png';
+import img_cad2 from '../../../assets/images/cad2.png';
 
 export default {
 	name: 'setp2-index',
@@ -1156,9 +1202,16 @@ export default {
 			let connection_res = this.$model.project.getConnectionItemHistory(project_id);
 			let cad_res = this.$model.cad.getCadDecodeDxf(project_id);
 			let history_res = this.$model.project.getProjectHistory(project_id);
+      this.base_status = 0
 
 			Promise.all([room_res, connection_res, cad_res, history_res]).then((results) => {
 				console.log(results);
+        if (!results[3].data.data || results[3].data.data.length === 0) {
+          // 无历史数据
+          this.base_status = -1
+        } else {
+          this.base_status = 1
+        }
 
 				this.getRoomHistory(results[0]);
 				this.getConnectionItemHistory(results[1]);
@@ -4151,7 +4204,18 @@ export default {
 			});
 		},
 
-		// ----------STORAGE 模板---------- END
+    init_project_by_demo(v) {
+      // v: 0:empty 1:demo
+      let api = '/api/project/init_project_by_demo'
+      let formdata = {
+        project_id:this.$route.query.id,
+        v:v
+      }
+      this.$request.post(api, formdata).then(()=>{
+        location.reload()
+      })
+    }
+    // ----------STORAGE 模板---------- END
 	},
 	data() {
 		return {
@@ -4173,7 +4237,8 @@ export default {
 					img: img_polygon,
 				},
 			],
-			show: false,
+      base_status: 0, // 0:loading -1:no project 1:has project
+      show: false,
 			visible: false,
 			show_region_confirm: false,
 			templateVisible: false,
@@ -4270,7 +4335,9 @@ export default {
 			deleteRegionTogether: true,
 			checkAllStorage: false, // 全选
 			indeterminate: false, // 是否选中了部分但没有全选
-		};
+      img_cad1: img_cad1,
+      img_cad2: img_cad2,
+    };
 	},
 };
 </script>

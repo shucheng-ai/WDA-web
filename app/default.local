@@ -1,4 +1,6 @@
 // rename test config js
+//https://t-layout2.shucheng-ai.com/v2/project/step2?id=655&step=1
+//https://t-layout2.shucheng-ai.com/
 let localConfig = {
     api: 'http://127.0.0.1:8008/',
     docker_api: 'http://172.17.0.1:8008/',
